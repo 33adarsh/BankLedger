@@ -46,7 +46,8 @@ app.get("/", (req, res) => {
 app.use((err, req, res, next) => {
     console.error("❌ Global Error Handler:", err);
     res.status(err.status || 500).json({
-        message: err.isOperational ? err.message : "Internal server error",
+        message: err.message || "Internal server error",
+        stack: err.stack,
         status: "error"
     });
 });

@@ -270,3 +270,33 @@ th {
   padding: 3rem 1rem;
   color: var(--text-secondary);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .navbar {
+    width: 100%;
+    padding: 1rem;
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+}

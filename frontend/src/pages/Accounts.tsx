@@ -68,7 +68,7 @@ const Accounts: React.FC = () => {
           <h1>Accounts</h1>
           <p style={{ color: 'var(--text-secondary)' }}>Manage your bank ledger accounts.</p>
         </div>
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
           <button onClick={fetchAccounts} className="btn-secondary" disabled={loading} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <RefreshCw className="w-4 h-4" /> Refresh
           </button>

@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
 
       {error && <div className="error-message">{error}</div>}
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2rem' }}>
         <Link to="/accounts" className="btn-primary" style={{ width: 'auto' }}>
           <PlusCircle className="w-5 h-5" /> Manage Accounts
         </Link>
