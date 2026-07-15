@@ -7,7 +7,7 @@ let pool = null;
 
 const connectDB = async () => {
     try {
-        pool = mysql.createPool({
+        const dbConfig = {
             host: process.env.DB_HOST,
             port: process.env.DB_PORT,
             user: process.env.DB_USER,
@@ -16,7 +16,15 @@ const connectDB = async () => {
             waitForConnections: true,
             connectionLimit: 10,
             queueLimit: 0,
-        });
+        };
+
+        if (process.env.DB_SSL === 'true' || process.env.DB_SSL === 'REQUIRED') {
+            dbConfig.ssl = {
+                rejectUnauthorized: false
+            };
+        }
+
+        pool = mysql.createPool(dbConfig);
 
         const connection = await pool.getConnection();
         console.log("✅ MySQL Connected Successfully");
